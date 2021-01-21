@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Historia;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +18,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/home', function () {
-    return view('home');
+    $list_historias = Historia::leftJoin("generos","historias.nombreHistorias", "=", "generos.idHistoria");
+    return view('home', compact('list_historias') );
 });
+Route::get('/perfil', function () {
+    $list_historias = Historia::where('creador','test')->get();
+    return view('perfil', compact('list_historias'));
+});
+Route::get('/seguidores', function () {
+    return view('seguidores');
+});
+Route::get('/seguidos', function () {
+    return view('seguidos');
+});
+Route::get('/historia_ready', function () {
+    return view('historia_ready');
+});
+Route::get('/mensajes', function () {
+    return view('mensajes');
+});
+
+Route::resource('historias', 'historiasController');

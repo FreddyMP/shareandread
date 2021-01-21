@@ -9,7 +9,10 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
        .logo{
-        padding-top: 10px;
+        padding-top: 20px;
+       }
+       i{
+           color: brown;
        }
        .comunication{
            margin-left: 3px;
@@ -17,7 +20,7 @@
        }
        .contenedor{
            position: absolute;
-           background-color: #eef5f7;
+           background-color: white;
            padding-top: 5px;
            width: 100%;
            margin-top: 0px;
@@ -29,9 +32,13 @@
         margin-top: 15px;
        }
        .leer_mas{
-           background-color: #33193c;
            color:white;
            width: 94%;
+       }
+       .btn_perfil_historia{
+           color:white;
+           width: 45%;
+           margin-left: 10px;
        }
        .intro{
            width: 97%;
@@ -40,10 +47,24 @@
            padding-top: 10px;
        }
        .serch{
-           background-color: rgb(231, 227, 245);
+           background-color: rgb(223, 217, 243);
+       }
+       .action_publicacion{
+           margin-left: 10px;
+       }
+       .form-control{
+           margin-top: 20px;
+       }
+       .btn-group{
+           margin-left: 12%;
+           margin-bottom: 20px;
+       }
+       .check_grupo{
+           width: 30%;
+           float: left;
        }
     </style>
-    <title>Document</title>
+    <title>Share&read</title>
 </head>
 <body>
     <div class="top">
@@ -51,28 +72,27 @@
         <div id="top" >
             <div class="row firs_line">
                 <div class="col logo">
-                    <img src="{{asset('images/logo.png')}}" alt="">
+                    <a href="{{url('home')}}"> <img src="{{asset('images/logo.png')}}" alt=""></a>
                 </div>
                 <div class="col">
                     <center>
-                        <img class="img_perfil" src="{{asset('images/pp.jpg')}}" width="70" alt="">
+                        <a href="{{url('perfil')}}"><img class="img_perfil" src="{{asset('images/pp.jpg')}}" width="70" alt=""></a>
                     </center>
                 </div>
             </div>
             <hr>
             <div class="row comunication" >
                     <div class="col ">
-                        Seguidores <i class="fa fa-star"></i>
+                        <a href="{{url('seguidores')}}"> <center><i class="fa fa-star-o fa-2x"></i> <br> 34</center></a>
                     </div >
                     <div class="col">
-                        Seguidos <i class="fa fa-eye"></i>
+                        <a href="{{url('seguidos')}}"><center> <i class="fa fa-newspaper-o fa-2x"></i> <br> 43</center></a>
                     </div>
                     <div class="col">
-                        Mensajes <i class="fa fa-telegram"></i>
+                        <a href="{{url('mensajes')}}"><center><i class="fa fa-telegram fa-2x"></i> <br> 10</center></a>
                     </div>
+                    <hr>
             </div>
-            <input class="form-control serch" type="text" name="" id="" placeholder="Creador, historia o capitulo">
-
         </div>
 
     </div>
