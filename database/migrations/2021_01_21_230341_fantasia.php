@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UrlImagen extends Migration
+class Fantasia extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class UrlImagen extends Migration
      */
     public function up()
     {
-        Schema::table('historias', function (Blueprint $table) {
-            $table->string("urlImagen");
-            //
+        Schema::table('generos', function (Blueprint $table) {
+            $table->string("fantasia");
         });
     }
 
@@ -26,9 +25,8 @@ class UrlImagen extends Migration
      */
     public function down()
     {
-        Schema::table('historias', function (Blueprint $table) {
+        Schema::table('generos', function (Blueprint $table) {
             $table->dropColumn('urlImagen');
-
         });
     }
 }

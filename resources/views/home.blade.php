@@ -1,18 +1,51 @@
 @extends('plantilla.plantilla')
 @section('top')
 @endsection
-
 @section('contenedor')
 <div class="publicacion">
     @foreach ($list_historias as $item)
         <div class="publicaciones">
             <div class="row img_info">
                 <div class="col">
-                    <img src="{{asset("images/terror.png")}}" height="120" width="120" alt="">
+                    <img src="{{asset("images/terror.png")}}" style="border-radius: 15px;" height="120" width="120" alt="">
                 </div>
                 <div class="col" style="margin-left: -85px;">
                     <h5>{{$item->nombreHistoria}}</h5>
-                    <small>Terror, Suspenso </small><br>
+                    @foreach ($generos as $gene)
+                        @if($gene->idHistoria == $item->nombreHistoria)
+                            <small>
+                                @if ($gene->terror != null)
+                                    <span class="generos"><small> Terror </small></span>
+                                @endif
+                                @if ($gene->suspenso != null)
+                                    <span class="generos"><small> Suspenso </small></span>
+                                @endif
+                                @if ($gene->suspenso != null)
+                                    <span class="generos"><small> Fantasia </small></span>
+                                @endif
+                                @if ($gene->romance != null)
+                                    <span class="generos"><small> Romance </small></span>
+                                @endif
+                                @if ($gene->drama != null)
+                                     <span class="generos" > <small> Drama </small></span>
+                                @endif
+                                @if ($gene->historico != null)
+                                    <span class="generos"><small> Historico </small></span>
+                                @endif
+                                @if ($gene->deportes != null)
+                                    <span class="generos"><small> Deportes </small></span>
+                                @endif
+                                @if ($gene->accion != null)
+                                    <span class="generos"><small> Accion </small></span>
+                                @endif
+                                @if ($gene->formativo != null)
+                                    <span class="generos"><small> Formativo </small></span>
+                                @endif
+
+                            </small>
+                        @endif
+                    @endforeach
+                    <br>
                     <strong>Capitulo: </strong>Capitulo IV<br>
                     <strong>Creador: </strong>  CorleoneX <br>
                     <i class="fa fa-heart"></i> 89
@@ -23,7 +56,7 @@
                     En este capitulos numero 4 solo estamos probando, no se emo...
                 </div>
             <div class="ver"><a href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-danger leer_mas">Leer capitulo completo</a></div>
-        </div>
+        </div> <br>
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -43,5 +76,7 @@
             </div>
         </div>
     @endforeach
+
+
 </div>
 @endsection

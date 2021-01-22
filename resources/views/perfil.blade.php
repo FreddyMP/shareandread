@@ -2,7 +2,9 @@
 @section('top') 
 @endsection
 @section('contenedor') 
-<hr>
+<center>
+  <img src="{{asset('images/pp.jpg')}}" width="80%" alt="">
+</center>
 <div class="row">
     <div class="col">
     <a href="{{url('historias/create')}}" class="btn btn-danger btn_perfil_historia">Agregar historia</a>
@@ -21,14 +23,13 @@
         </h2>
         <div id="collapse{{$item->id}}" class="accordion-collapse collapse " aria-labelledby="heading{{$item->id}}" data-bs-parent="#accordionExample">
           <div class="accordion-body">
+           <center> <strong> Prologo</strong> </center>
             {{$item->descripcion}}
           </div>
-          <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-danger">Ver</button>
-            <button type="button" class="btn btn-danger">Publicar</button>
-            <button type="button" class="btn btn-danger">Editar</button>
-            <button type="button" class="btn btn-danger">Eliminar</button>
-          </div>
+            <div class="alert alert-secondary" role="alert">
+              <Strong>Capitulo: </Strong>  La odisea
+
+            </div>
         </div>
       </div>
     @endforeach

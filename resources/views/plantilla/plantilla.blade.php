@@ -18,6 +18,16 @@
            margin-left: 3px;
            padding-bottom: 18px;
        }
+       .generos{
+           background-color: rgb(119, 207, 181);
+           color:lavender;
+           padding-top: 1px;
+           padding-bottom: 3px;
+           padding-left: 7px;
+           padding-right: 7px;
+           border-radius: 10px;
+           margin-right: 5px;
+       }
        .contenedor{
            position: absolute;
            background-color: white;
@@ -45,9 +55,16 @@
        }
        .img_perfil{
            padding-top: 10px;
+           border-top-left-radius: 40px;
+           border-top-right-radius: 40px;
+           border-bottom-right-radius: 30px;
+           border-bottom-left-radius: 30px;
+
+
        }
-       .serch{
+       .search{
            background-color: rgb(223, 217, 243);
+           margin-top:-90px;
        }
        .action_publicacion{
            margin-left: 10px;
@@ -91,8 +108,9 @@
                     <div class="col">
                         <a href="{{url('mensajes')}}"><center><i class="fa fa-telegram fa-2x"></i> <br> 10</center></a>
                     </div>
-                    <hr>
             </div>
+            <input type="text" name="busqueda" class="form-control search" id="" placeholder="Nombre de historia">
+
         </div>
 
     </div>
